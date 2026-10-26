@@ -96,7 +96,7 @@
 				<key>script</key>
 				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
 if ! command -v vpn &gt;/dev/null; then
-  echo '{"items":[{"title":"Install the Proton VPN CLI","subtitle":"brew install stevelacey/tap/proton-vpn-cli-macos","valid":false}]}'
+  echo '{"items":[{"title":"Install the Proton VPN CLI","subtitle":"brew install stevelacey/tap/proton-vpn-cli","valid":false}]}'
   exit
 fi
 # Flag icons, drawn once from this Mac's emoji font.
@@ -207,7 +207,7 @@ vpn "$1" 2&gt;&amp;1</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Connect to Proton VPN by country, server or mode (sc, p2p, tor, random), disconnect and change settings, with the vpn command from proton-vpn-cli-macos (brew install stevelacey/tap/proton-vpn-cli-macos).</string>
+	<string>Connect to Proton VPN by country, server or mode (sc, p2p, tor, random), disconnect and change settings, with the vpn command from the Proton VPN CLI (brew install stevelacey/tap/proton-vpn-cli).</string>
 	<key>uidata</key>
 	<dict>
 		<key>23AB0F3F-8756-44D1-9F3A-3260FE17A28F</key>
