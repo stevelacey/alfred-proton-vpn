@@ -1,8 +1,15 @@
 #!/bin/bash
-# Copies this workflow into Alfred's preferences (synced through Google Drive).
+# Copies this workflow into Alfred's preferences, over the installed copy, for development.
 set -euo pipefail
 
 cd "$(dirname "$0")"
-dest="/Users/steve/Google Drive/Software/Alfred.alfredpreferences/workflows/user.workflow.1398E96B-FDCF-4C71-AFD6-D7FEAE830761"
-cp info.plist icon.png flags.js "$dest/"
+prefs=$(defaults read com.runningwithcrayons.Alfred-Preferences syncfolder 2>/dev/null || echo ~/Library/Application\ Support/Alfred)
+prefs="${prefs/#\~/$HOME}/Alfred.alfredpreferences/workflows"
+bundleid=$(/usr/libexec/PlistBuddy -c "Print :bundleid" src/info.plist)
+dest=$(grep -l "<string>$bundleid</string>" "$prefs"/*/info.plist 2>/dev/null | head -1 | xargs -I{} dirname {} || true)
+if [[ -z "$dest" ]]; then
+    echo "Not installed yet: run ./bundle --install first" >&2
+    exit 1
+fi
+cp src/* "$dest/"
 echo "Installed to $dest"

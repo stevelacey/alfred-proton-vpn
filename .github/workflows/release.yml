@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release:
+    name: Publish GitHub release
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Bundle the workflow
+        run: |
+          /usr/libexec/PlistBuddy -c "Set :version ${GITHUB_REF_NAME#v}" src/info.plist
+          ./bundle
+
+      - name: Create the release with the workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" "Proton VPN.alfredworkflow" --title "$GITHUB_REF_NAME" --generate-notes

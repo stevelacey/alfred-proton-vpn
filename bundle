@@ -1,0 +1,10 @@
+#!/bin/bash
+# Bundles the workflow into "Proton VPN.alfredworkflow"; --install opens it in Alfred.
+set -euo pipefail
+
+cd "$(dirname "$0")"
+workflow="Proton VPN.alfredworkflow"
+rm -f "$workflow"
+(cd src && zip -qr "../$workflow" . -x ".DS_Store")
+echo "$workflow"
+[[ "${1:-}" == --install ]] && open "$workflow" || true
