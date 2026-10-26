@@ -38,6 +38,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>23AB0F3F-8756-44D1-9F3A-3260FE17A28F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>50862AEB-E8C8-4080-AC16-E61029D6C6CB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -174,11 +184,39 @@ vpn "$1" 2&gt;&amp;1</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:notice}</string>
+				<key>title</key>
+				<string>Proton VPN</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>23AB0F3F-8756-44D1-9F3A-3260FE17A28F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Connect to Proton VPN by country, server or mode (sc, p2p, tor, random), disconnect and change settings, with the vpn command from proton-vpn-cli-macos (brew install stevelacey/tap/proton-vpn-cli-macos).</string>
 	<key>uidata</key>
 	<dict>
+		<key>23AB0F3F-8756-44D1-9F3A-3260FE17A28F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>480</integer>
+			<key>ypos</key>
+			<integer>-20</integer>
+		</dict>
 		<key>50862AEB-E8C8-4080-AC16-E61029D6C6CB</key>
 		<dict>
 			<key>xpos</key>

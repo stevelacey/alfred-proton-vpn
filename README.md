@@ -25,6 +25,8 @@ Proton's Mac app, not alongside it, since it runs its own VPN connection that th
 - 🔒 Secure Core, P2P and Tor, anywhere or in a country (`vpn sc japan`, `vpn p2p nl`, `vpn tor swiss`)
 - ⚙️ NetShield, kill switch and port forwarding toggles, and DNS (`vpn kill`, `vpn dns cloudflare`)
 - 🔌 Disconnect and status (`vpn disconnect`, `vpn`)
+- 🔔 Notifications when it starts and when it's done
+- 🔑 Sign in and out (`vpn sign in` opens Terminal, so your password never goes through Alfred)
 
 ## Install
 
