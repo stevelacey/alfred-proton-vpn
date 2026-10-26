@@ -8,7 +8,7 @@
 An Alfred workflow for Proton VPN: connect to a country, server or mode, disconnect and change settings,
 all from the `vpn` keyword. It uses the [Proton VPN CLI (forked for macOS)](https://github.com/stevelacey/proton-vpn-cli-macos).
 
-![Screenshot](screenshot.png)
+<img src="screenshot.png" alt="Screenshot" width="576">
 
 ## Better together
 
