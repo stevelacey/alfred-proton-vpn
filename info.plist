@@ -51,7 +51,7 @@
 	<key>createdby</key>
 	<string>Steve Lacey</string>
 	<key>description</key>
-	<string>Connect Proton VPN to a country</string>
+	<string>Connect Proton VPN to a country, server or mode</string>
 	<key>name</key>
 	<string>Proton VPN</string>
 	<key>objects</key>
@@ -84,7 +84,14 @@
 				<key>runningsubtext</key>
 				<string>Loading countries…</string>
 				<key>script</key>
-				<string>/Users/steve/Sites/proton/.venv/bin/vpn list --alfred "$1"</string>
+				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
+if ! command -v vpn &gt;/dev/null; then
+  echo '{"items":[{"title":"Install the Proton VPN CLI","subtitle":"brew install stevelacey/tap/proton-vpn-cli-macos","valid":false}]}'
+  exit
+fi
+# Flag icons, drawn once from this Mac's emoji font.
+[ -d "$alfred_workflow_cache/flags" ] || vpn list | cut -d' ' -f1 | osascript -l JavaScript flags.js "$alfred_workflow_cache/flags"
+vpn list --alfred "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -130,7 +137,8 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>/Users/steve/Sites/proton/.venv/bin/vpn "$1" 2&gt;&amp;1</string>
+				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
+vpn "$1" 2&gt;&amp;1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -168,7 +176,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Uses vpn from ~/Sites/proton (source: ~/Sites/proton/alfred, installed with alfred/install).</string>
+	<string>Connect to Proton VPN by country, server or mode (sc, p2p, tor, random), disconnect and change settings, with the vpn command from proton-vpn-cli-macos (brew install stevelacey/tap/proton-vpn-cli-macos).</string>
 	<key>uidata</key>
 	<dict>
 		<key>50862AEB-E8C8-4080-AC16-E61029D6C6CB</key>
@@ -205,6 +213,6 @@
 	<key>version</key>
 	<string>1.0</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/stevelacey/alfred-proton-vpn</string>
 </dict>
 </plist>
