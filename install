@@ -1,0 +1,8 @@
+#!/bin/bash
+# Copies this workflow into Alfred's preferences (synced through Google Drive).
+set -euo pipefail
+
+cd "$(dirname "$0")"
+dest="/Users/steve/Google Drive/Software/Alfred.alfredpreferences/workflows/user.workflow.1398E96B-FDCF-4C71-AFD6-D7FEAE830761"
+cp info.plist icon.png "$dest/"
+echo "Installed to $dest"
