@@ -95,13 +95,13 @@
 				<string>Loading countries…</string>
 				<key>script</key>
 				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
-if ! command -v vpn &gt;/dev/null; then
+if ! command -v protonvpn &gt;/dev/null; then
   echo '{"items":[{"title":"Install the Proton VPN CLI","subtitle":"brew install stevelacey/tap/proton-vpn-cli","valid":false}]}'
   exit
 fi
 # Flag icons, drawn once from this Mac's emoji font.
-[ -d "$alfred_workflow_cache/flags" ] || vpn list | cut -d' ' -f1 | osascript -l JavaScript flags.js "$alfred_workflow_cache/flags"
-vpn list --alfred "$1"</string>
+[ -d "$alfred_workflow_cache/flags" ] || protonvpn list | cut -d' ' -f1 | osascript -l JavaScript flags.js "$alfred_workflow_cache/flags"
+protonvpn list --alfred "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -148,7 +148,7 @@ vpn list --alfred "$1"</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
-vpn "$1" 2&gt;&amp;1</string>
+protonvpn "$1" 2&gt;&amp;1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -209,7 +209,7 @@ vpn "$1" 2&gt;&amp;1</string>
 	<key>readme</key>
 	<string>## Setup
 
-Run `vpn setup` in Terminal once, so connecting doesn't ask for your password, then sign in with `protonvpn signin &lt;username&gt;`.
+Run `protonvpn setup` in Terminal once. It lets connecting run without your password, and signs you in to your Proton account.
 
 ## Usage
 

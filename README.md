@@ -32,8 +32,7 @@ Proton's Mac app, not alongside it, since it runs its own VPN connection that th
 
 ```sh
 brew install stevelacey/tap/proton-vpn-cli
-vpn setup
-protonvpn signin <username>
+protonvpn setup
 ```
 
 Then [download the workflow](https://github.com/stevelacey/alfred-proton-vpn/releases/latest) and open it.
