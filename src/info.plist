@@ -56,6 +56,26 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F1D3A2E-8C4B-4E57-9A1F-2B7C5D8E4A10</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C3A8E5F1-4D2B-4F6A-8E7C-9B1D2F3A5C64</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
@@ -218,6 +238,54 @@ fi</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>6F1D3A2E-8C4B-4E57-9A1F-2B7C5D8E4A10</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>C3A8E5F1-4D2B-4F6A-8E7C-9B1D2F3A5C64</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## Setup
@@ -248,6 +316,13 @@ Type `sc`, `p2p`, `tor` or `random` before a country for that kind of server, or
 			<key>ypos</key>
 			<integer>110</integer>
 		</dict>
+		<key>6F1D3A2E-8C4B-4E57-9A1F-2B7C5D8E4A10</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>-130</integer>
+		</dict>
 		<key>92D7D365-7ED2-40DB-84D5-3E7BEDB5F36A</key>
 		<dict>
 			<key>xpos</key>
@@ -261,6 +336,13 @@ Type `sc`, `p2p`, `tor` or `random` before a country for that kind of server, or
 			<integer>480</integer>
 			<key>ypos</key>
 			<integer>110</integer>
+		</dict>
+		<key>C3A8E5F1-4D2B-4F6A-8E7C-9B1D2F3A5C64</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>-260</integer>
 		</dict>
 		<key>F4B20D53-4FED-4B67-8537-E0E6C368BD03</key>
 		<dict>
