@@ -82,7 +82,7 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>vpn</string>
+				<string>{var:keyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -207,7 +207,18 @@ vpn "$1" 2&gt;&amp;1</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Connect to Proton VPN by country, server or mode (sc, p2p, tor, random), disconnect and change settings, with the vpn command from the Proton VPN CLI (brew install stevelacey/tap/proton-vpn-cli).</string>
+	<string>## Setup
+
+Run `vpn setup` in Terminal once, so connecting doesn't ask for your password, then sign in with `protonvpn signin &lt;username&gt;`.
+
+## Usage
+
+Connect to Proton VPN by country, server or mode via the `vpn` keyword.
+
+![Connecting to a country](images/countries.png)
+
+Type `sc`, `p2p`, `tor` or `random` before a country for that kind of server, or `fastest`, `disconnect`, `dns`, `netshield`, `kill switch` or `port forwarding` for those.
+</string>
 	<key>uidata</key>
 	<dict>
 		<key>23AB0F3F-8756-44D1-9F3A-3260FE17A28F</key>
@@ -246,6 +257,30 @@ vpn "$1" 2&gt;&amp;1</string>
 			<integer>40</integer>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>vpn</string>
+				<key>placeholder</key>
+				<string>vpn</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The keyword to start with</string>
+			<key>label</key>
+			<string>Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+	</array>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>

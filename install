@@ -11,5 +11,5 @@ if [[ -z "$dest" ]]; then
     echo "Not installed yet: run ./bundle --install first" >&2
     exit 1
 fi
-cp src/* "$dest/"
+cp -R src/ "$dest/"
 echo "Installed to $dest"
