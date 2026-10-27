@@ -148,7 +148,15 @@ protonvpn list --alfred "$1"</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
-protonvpn "$1" 2&gt;&amp;1</string>
+output=$(protonvpn "$1" 2&gt;&amp;1)
+port=$(printf '%s\n' "$output" | sed -n 's/^Forwarded port \([0-9]*\)$/\1/p')
+if [ -n "$port" ]; then
+  # Turning port forwarding on waits for the port: copy it, and say so.
+  printf '%s' "$port" | pbcopy
+  echo "Port $port forwarded and copied"
+else
+  echo "$output"
+fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
