@@ -6,13 +6,13 @@
 [![License](https://img.shields.io/github/license/stevelacey/alfred-proton-vpn?style=flat-square)](LICENSE.md)
 
 An Alfred workflow for Proton VPN: connect to a country, server or mode, disconnect and change settings,
-all from the `vpn` keyword. It uses the [Proton VPN CLI (forked for macOS)](https://github.com/stevelacey/proton-vpn-cli-macos).
+all from the `vpn` keyword. It uses the [Proton VPN CLI for macOS](https://github.com/stevelacey/proton-vpn-cli-macos).
 
 <img src="screenshot.png" alt="Screenshot" width="576">
 
 ## Better together
 
-- **[Proton VPN CLI](https://github.com/stevelacey/proton-vpn-cli-macos)**, forked for macOS: `vpn` and `protonvpn` in your terminal
+- **[Proton VPN CLI for macOS](https://github.com/stevelacey/proton-vpn-cli-macos)**: `vpn` and `protonvpn` in your terminal
 - **[Proton VPN Menu Bar](https://github.com/stevelacey/proton-vpn-menubar)**: status, countries and settings in your menu bar
 
 They all drive the same connection: connect from one and the others keep up. Use them instead of
