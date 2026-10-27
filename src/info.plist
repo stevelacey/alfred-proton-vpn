@@ -148,6 +148,11 @@ protonvpn list --alfred "$1"</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
+if [ "$1" = port ]; then
+  # Its notice already says it's copied.
+  protonvpn port | tr -d '\n' | pbcopy
+  exit
+fi
 output=$(protonvpn "$1" 2&gt;&amp;1)
 port=$(printf '%s\n' "$output" | sed -n 's/^Forwarded port \([0-9]*\)$/\1/p')
 if [ -n "$port" ]; then

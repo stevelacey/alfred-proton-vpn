@@ -26,7 +26,7 @@ Proton's Mac app, not alongside it, since it runs its own VPN connection that th
 - ⚙️ NetShield, kill switch and port forwarding toggles, and DNS (`vpn kill`, `vpn dns cloudflare`)
 - 🔌 Disconnect and status (`vpn disconnect`, `vpn`)
 - 🔔 Notifications when it starts and when it's done
-- 📋 Turning port forwarding on copies the forwarded port
+- 📋 Turning port forwarding on copies the forwarded port, and `vpn port` copies it again
 - 🔑 Sign in and out (`vpn sign in` opens Terminal, so your password never goes through Alfred)
 
 ## Install
