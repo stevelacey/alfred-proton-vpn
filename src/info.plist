@@ -121,7 +121,14 @@ if ! command -v protonvpn &gt;/dev/null; then
 fi
 # Flag icons, drawn once from this Mac's emoji font.
 [ -d "$alfred_workflow_cache/flags" ] || protonvpn list | cut -d' ' -f1 | osascript -l JavaScript flags.js "$alfred_workflow_cache/flags"
-protonvpn list --alfred "$1"</string>
+# The connection, settings and countries, fetched together, then made into results.
+data=$(mktemp -d)
+protonvpn status --json &gt; "$data/status.json" &amp;
+protonvpn settings --json &gt; "$data/settings.json" &amp;
+protonvpn list --json &gt; "$data/countries.json" &amp;
+wait
+osascript -l JavaScript filter.js "$1" "$data"
+rm -rf "$data"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -168,12 +175,38 @@ protonvpn list --alfred "$1"</string>
 				<integer>0</integer>
 				<key>script</key>
 				<string>export PATH="/opt/homebrew/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
-if [ "$1" = port ] || [ "$1" = ip ]; then
-  # Its notice already says it's copied.
-  protonvpn "$1" | tr -d '\n' | pbcopy
-  exit
-fi
-output=$(protonvpn "$1" 2&gt;&amp;1)
+protonvpn=$(command -v protonvpn)
+case "$1" in
+  port|ip)
+    # Its notice already says it's copied.
+    protonvpn "$1" | tr -d '\n' | pbcopy
+    exit
+    ;;
+  signin)
+    # In Terminal, which asks for the password, so it never comes through here.
+    osascript - "read -p \"Proton username: \" username &amp;&amp; '$protonvpn' signin \"\$username\"" &lt;&lt;'APPLESCRIPT'
+on run argv
+  tell application "Terminal"
+    do script (item 1 of argv)
+    activate
+  end tell
+end run
+APPLESCRIPT
+    exit
+    ;;
+  setup)
+    # Copies Homebrew's newer WireGuard tools for running as root, after macOS's own password dialog.
+    if osascript - "$protonvpn" "$USER" &lt;&lt;'APPLESCRIPT' &gt;/dev/null 2&gt;&amp;1
+on run argv
+  do shell script quoted form of (item 1 of argv) &amp; " setup --user " &amp; quoted form of (item 2 of argv) with administrator privileges
+end run
+APPLESCRIPT
+    then echo "WireGuard tools refreshed"; else echo "Setup cancelled"; fi
+    exit
+    ;;
+esac
+# Its words as separate arguments, e.g. dns cloudflare.
+output=$(protonvpn $1 2&gt;&amp;1)
 port=$(printf '%s\n' "$output" | sed -n 's/^Forwarded port \([0-9]*\)$/\1/p')
 if [ -n "$port" ]; then
   # Turning port forwarding on waits for the port: copy it, and say so.
