@@ -213,7 +213,8 @@ if [ -n "$port" ]; then
   printf '%s' "$port" | pbcopy
   echo "Port $port forwarded and copied"
 else
-  echo "$output"
+  # Notifications don't end in periods, which Proton's messages do.
+  printf '%s\n' "$output" | sed -E 's/([^.])\.[[:space:]]*$/\1/'
 fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
