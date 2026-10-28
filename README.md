@@ -2,6 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/stevelacey/alfred-proton-vpn?style=flat-square)](https://github.com/stevelacey/alfred-proton-vpn/releases)
 [![CI](https://img.shields.io/github/actions/workflow/status/stevelacey/alfred-proton-vpn/ci.yml?branch=main&style=flat-square)](https://github.com/stevelacey/alfred-proton-vpn/actions/workflows/ci.yml?query=branch:main)
+[![Coverage](https://img.shields.io/codecov/c/github/stevelacey/alfred-proton-vpn/main?style=flat-square)](https://codecov.io/gh/stevelacey/alfred-proton-vpn)
 [![Downloads](https://img.shields.io/github/downloads/stevelacey/alfred-proton-vpn/total?style=flat-square)](https://github.com/stevelacey/alfred-proton-vpn/releases)
 [![License](https://img.shields.io/github/license/stevelacey/alfred-proton-vpn?style=flat-square)](LICENSE.md)
 
@@ -45,6 +46,7 @@ Requires Alfred with the Powerpack.
 ```sh
 ./bundle --install   # builds Proton VPN.alfredworkflow and opens it in Alfred
 ./install            # copies src/ over the installed copy
+node --test          # tests the results, which src/filter.js builds from the CLI's JSON
 ```
 
 ## License
