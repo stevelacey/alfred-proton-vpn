@@ -6,18 +6,18 @@
 [![Downloads](https://img.shields.io/github/downloads/stevelacey/alfred-proton-vpn/total?style=flat-square)](https://github.com/stevelacey/alfred-proton-vpn/releases)
 [![License](https://img.shields.io/github/license/stevelacey/alfred-proton-vpn?style=flat-square)](LICENSE.md)
 
-An Alfred workflow for Proton VPN: connect to a country, server or mode, disconnect and change settings,
-all from the `vpn` keyword. It uses the [Proton VPN CLI for macOS](https://github.com/stevelacey/proton-vpn-cli-macos).
+An Alfred workflow for Proton VPN. Type `vpn` to connect to a country, server or mode, disconnect,
+or change settings. It uses the [Proton VPN CLI for macOS](https://github.com/stevelacey/proton-vpn-cli-macos).
 
 <img src="screenshot.png" alt="Screenshot" width="576">
 
-## Better together
+## Related projects
 
 - **[Proton VPN CLI for macOS](https://github.com/stevelacey/proton-vpn-cli-macos)**: `vpn` and `protonvpn` in your terminal
 - **[Proton VPN Menu Bar](https://github.com/stevelacey/proton-vpn-menubar)**: status, countries and settings in your menu bar
 
-They all drive the same connection: connect from one and the others keep up. Use them instead of
-Proton's Mac app, not alongside it, since it runs its own VPN connection that these can't see or control.
+They share the same connection. Don't run Proton's Mac app at the same time, since it has its own
+connection that these can't see.
 
 ## Features
 
